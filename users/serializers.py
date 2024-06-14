@@ -1,6 +1,6 @@
 from rest_framework.serializers import ModelSerializer, IntegerField, CharField, BooleanField
 from users.models import User
-from phonenumber_field.modelfields import PhoneNumberField
+from comm_net_app.organization_crud.serializers import OrganizationSerializer
 
 
 
@@ -23,6 +23,15 @@ class NewUserSerializer(ModelSerializer):
         user.set_password(validated_data['password'])
         user.save()
         return user
+
+    class Meta:
+        model = User
+        fields = '__all__'
+
+
+class NewUserWithOrgSerializer(ModelSerializer):
+    organization = OrganizationSerializer()
+
 
     class Meta:
         model = User
