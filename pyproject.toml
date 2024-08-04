@@ -19,6 +19,7 @@ setuptools = "^70.0.0"
 django-cors-headers = "^4.3.1"
 celery = "^5.4.0"
 djangorestframework = "^3.15.1"
+djoser = "^2.2.3"
 
 
 [build-system]
